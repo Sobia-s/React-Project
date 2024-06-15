@@ -3,7 +3,7 @@ import './App.css';
 import Calculator from './components/calculator/Calculator';
 import ToDo from './components/todo/ToDo';
 import Portfolio from './components/Portfolio/Portfolio';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
@@ -22,9 +22,9 @@ function App() {
             <h2>My React Projects</h2>
           </div>
           <nav className='nav'>
-            <a href="/calculator" onClick={handleLinkClick("/calculator")} className='nav-items'>Calculator</a>
-            <a href="/to-do" onClick={handleLinkClick("/to-do")} className='nav-items'>To-Do</a>
-            <a href="/portfolio" onClick={handleLinkClick("/portfolio")} className='nav-items'>Portfolio Page</a>
+            <Link to="/calculator" className='nav-items'>Calculator</Link>
+            <Link to="/to-do" className='nav-items'>To-Do</Link>
+            <Link to="/portfolio" className='nav-items'>Portfolio Page</Link>
           </nav>
         </div>
       )}
@@ -39,7 +39,6 @@ function App() {
 }
 
 export default App;
-
 
 
 
