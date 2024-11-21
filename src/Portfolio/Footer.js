@@ -2,6 +2,9 @@ import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear(); // Current year
+  const currentDate = new Date().toLocaleDateString(); // Current date in localized format
+
   return (
     <Box backgroundColor="#18181b">
       <footer>
@@ -14,7 +17,9 @@ const Footer = () => {
           maxWidth="1024px"
           height={{ base: 12, md: 16 }}
         >
-          <Text fontSize={{ base: "sm", md: "md" }}>Pete • © 2022</Text>
+          <Text fontSize={{ base: "sm", md: "md" }}>
+            Pete • {currentDate} • © {currentYear}
+          </Text>
         </Flex>
       </footer>
     </Box>
@@ -22,5 +27,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
